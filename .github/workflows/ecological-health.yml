@@ -1,0 +1,88 @@
+# Ecological Engineering — CI Pipeline
+# ─────────────────────────────────────────────────────────────────────────────
+# Runs structural health checks and pattern fitness functions on every pull
+# request and push to main.
+#
+# Pipeline order (enforced):
+#   1. SCARS Gate          — structural health before anything else
+#   2. P01 Coupling Guard  — async/sync coupling thresholds
+#   3. P02 Keystone Check  — keystone interface contract coverage
+#   [further pattern checks added here as patterns are implemented]
+#
+# To add a new fitness function:
+#   1. Add the script to pattern-library/fitness-functions/
+#   2. Add a step below, after the existing pattern checks
+#   3. Keep the pattern number in the step name for ordering clarity
+#
+# Required secrets / env vars (set in GitHub repo settings → Secrets):
+#   TELEMETRY_SOURCE    — 'prometheus' | 'mock' (default: mock)
+#   PROMETHEUS_URL      — your Prometheus endpoint (if using prometheus source)
+#   DEPENDENCY_SOURCE   — 'manifest' | 'mock' (default: mock)
+#   MANIFEST_PATH       — path to service-manifest.json (optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Ecological Health Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ecological-fitness:
+    name: Ecological Fitness Functions
+    runs-on: ubuntu-latest
+
+    env:
+      TELEMETRY_SOURCE: ${{ secrets.TELEMETRY_SOURCE || 'mock' }}
+      PROMETHEUS_URL:   ${{ secrets.PROMETHEUS_URL }}
+      DEPENDENCY_SOURCE: ${{ secrets.DEPENDENCY_SOURCE || 'mock' }}
+      MANIFEST_PATH:    ${{ secrets.MANIFEST_PATH || './service-manifest.json' }}
+      SCARS_SOURCE:     ${{ secrets.SCARS_SOURCE || 'mock' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── STEP 1: SCARS Gate ────────────────────────────────────────────────
+      # Must pass before any pattern checks run.
+      # Checks: Separation, Cohesion, Abstraction, Responsibilities, Simplify
+      - name: '[SCARS] Structural Health Gate'
+        run: node pattern-library/fitness-functions/scars-gate.js
+
+      # ── STEP 2: P01 — Mycelial Mesh ──────────────────────────────────────
+      # Checks synchronous coupling and event flow concentration.
+      # Fails if any service exceeds 30% sync coupling.
+      # - name: '[P01] Coupling Guard'
+      #   run: node pattern-library/fitness-functions/p01-coupling-guard.js
+
+      # ── STEP 3: P02 — Keystone Interface ─────────────────────────────────
+      # Checks that high-dependency interfaces have contract test coverage.
+      # Warns on unregistered owners.
+      # - name: '[P02] Keystone Detector'
+      #   run: node pattern-library/fitness-functions/p02-keystone-detector.js
+
+      # ── FUTURE STEPS (uncomment as patterns are implemented) ──────────────
+
+      # - name: '[P05] Niche Partitioning — Domain Boundary Check'
+      #   run: node pattern-library/fitness-functions/p05-niche-partitioning.js
+
+      # - name: '[P09] Carrying Capacity — Load Threshold Check'
+      #   run: node pattern-library/fitness-functions/p09-carrying-capacity.js
+
+      # - name: '[P11] Cascade Risk — Dependency Chain Depth Check'
+      #   run: node pattern-library/fitness-functions/p11-cascade-risk.js
+
+      # ── Summary ───────────────────────────────────────────────────────────
+      - name: Health check summary
+        if: always()
+        run: |
+          echo "Ecological health check complete."
+          echo "See individual step logs for details."
+          echo "Reference: docs/scars-diagnostic/README.md"

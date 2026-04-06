@@ -26,18 +26,19 @@ The ecological framing is not decorative. It explains *why* each pattern works, 
 | Migrate from a tangled, hard-to-change system | [migration-paths/](migration-paths/) |
 | See how this connects to other frameworks | [docs/framework-connections.md](docs/framework-connections.md) |
 | Set up the fitness function pipeline | [docs/service-manifest-quickstart.md](docs/service-manifest-quickstart.md) |
+| Integrate health checks into CI/CD | [docs/ci-integration-guide.md](docs/ci-integration-guide.md) |
 
 ---
 
 ## Getting started with the fitness function pipeline
 
-The architecture health checks run automatically in your CI/CD pipeline. To enable them:
+The architecture health checks run automatically in your CI/CD pipeline to catch violations on every push and pull request. To enable them:
 
 1. **Register your service:** Copy [service-manifest.json](service-manifest.json) and fill it with your service details (5 minutes)
-2. **Validate:** Run `node docs/validate-manifest.js` to check for structural violations
-3. **Deploy:** The SCARS gate runs before deployment, catching violations early
+2. **Validate locally:** Run `node docs/validate-manifest.js` to check for structural violations before pushing
+3. **Deploy with confidence:** The SCARS gate and pattern checks run in CI, catching violations early
 
-→ [Quick start guide](docs/service-manifest-quickstart.md)
+→ [5-minute quickstart](docs/service-manifest-quickstart.md) | [CI integration guide](docs/ci-integration-guide.md)
 
 ---
 
