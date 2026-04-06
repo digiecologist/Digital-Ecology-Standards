@@ -57,7 +57,7 @@ The problem is unmanaged dependency concentration. Some interfaces carry more we
 
 ## 6. Antipatterns
 
-Most common: identifying keystones but not treating them differently. The audit happens, the list is made, and then nothing changes operationally.
+See [AP-02: Keystone Interface antipatterns](../../antipatterns/ap-02-keystone-interface.md). Most common: identifying keystones but not treating them differently. The audit happens, the list is made, and then nothing changes operationally.
 
 > **Sign:** a post-mortem identifies a service on the keystone list as the failure origin via a routine undeclared schema change.
 
