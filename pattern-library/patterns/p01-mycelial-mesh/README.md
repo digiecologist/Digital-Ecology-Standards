@@ -1,4 +1,4 @@
-# P01 — Mycelial Mesh
+# P01 Mycelial Mesh
 
 **Category:** Structural / Architectural | **Build priority:** BUILD FIRST | **Complexity:** Medium
 **AC score contribution:** Technical AC (T-AC)
@@ -7,7 +7,7 @@
 
 ## 1. What this pattern is
 
-In a forest, fungi thread through soil connecting trees that have no direct contact with each other. Signals move through a shared medium, and the ecosystem responds — without any tree calling another tree.
+In a forest, fungi thread through soil connecting trees that have no direct contact with each other. Signals move through a shared medium, and the ecosystem responds, without any tree calling another tree.
 
 The Mycelial Mesh applies that structure to software. Service A does not call Service B. Instead it publishes an event into a shared communication layer. Service B receives it and responds in its own time. The services do not know each other. They only know the mesh.
 
@@ -15,8 +15,8 @@ The Mycelial Mesh applies that structure to software. Service A does not call Se
 
 ## 2. The value it brings
 
-- Teams deploy independently — no cross-boundary coordination required
-- Failures stay contained — one slow service does not drag down its callers
+- Teams deploy independently, no cross-boundary coordination required
+- Failures stay contained, one slow service does not drag down its callers
 - New consumers attach without any upstream service changing
 - Integration contracts become explicit and visible
 
@@ -42,7 +42,7 @@ The core problem is synchronous coupling. When services call each other directly
 
 ## 5. What needs to happen
 
-1. Identify your highest-coupling service — the one most other services call synchronously
+1. Identify your highest-coupling service, the one most other services call synchronously
 2. Choose an event streaming platform (Kafka, AWS EventBridge, Azure Service Bus, RabbitMQ)
 3. Introduce a schema registry (Confluent, AWS Glue, or the Git-based registry in this standards kit)
 4. Convert the first synchronous call to an event
