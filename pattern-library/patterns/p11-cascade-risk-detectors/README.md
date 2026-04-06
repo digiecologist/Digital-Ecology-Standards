@@ -55,6 +55,8 @@ The problem is invisible blast radius. When failure paths are unmapped, every in
 
 ## 6. Antipatterns
 
+See [AP-11: Cascade Risk Detectors antipatterns](../../antipatterns/ap-11-cascade-risk-detectors.md).
+
 **The static risk map:** done once, never updated. Dependency graphs change constantly.
 
 > **Sign:** a cascade post-mortem reveals a dependency not on the risk map, added three months ago.
