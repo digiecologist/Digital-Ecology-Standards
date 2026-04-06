@@ -28,7 +28,7 @@ See [ac-score-calculator.md](ac-score-calculator.md) for the step-by-step scorin
 
 ## Automated measurement
 
-Fitness functions for each component are in [fitness-functions/](fitness-functions/).
+Fitness functions for each component are in [fitness-functions/](fitness-functions/)
 
 These run in your CI/CD pipeline and feed into a continuous AC score — no manual calculation required once the pipeline is set up.
 
