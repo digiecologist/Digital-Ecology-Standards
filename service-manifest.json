@@ -1,0 +1,53 @@
+{
+  "_comment": "service-manifest.json — one file per repository, maintained by the owning team.",
+  "_schema_version": "1.0",
+  "_docs": "See docs/service-manifest-guide.md for field definitions.",
+
+  "services": [
+    {
+      "_comment": "--- REPLACE THIS BLOCK with your service details ---",
+
+      "name": "your-service-name",
+
+      "domain": "your-domain-name",
+
+      "responsibilities": [
+        "one thing this service does",
+        "another thing (keep to 3 or fewer — if you have more, consider P05 Niche Partitioning)"
+      ],
+
+      "publicApiPaths": [
+        "/resource",
+        "/resource/:id",
+        "/resource/:id/action"
+      ],
+
+      "dependsOn": [
+        "name-of-api-or-service-you-call"
+      ],
+
+      "dependencyDomains": [
+        "domain-of-each-dependency"
+      ],
+
+      "contractTests": [
+        "list-of-dependencies-you-have-pact-tests-for"
+      ],
+
+      "operationsPerDay": 0,
+
+      "owner": "your-team-name"
+    }
+  ],
+
+  "interfaces": [
+    {
+      "_comment": "--- Register every API/interface your service exposes ---",
+
+      "name": "your-api-name",
+      "owner": "your-team-name",
+      "hasContractTests": false,
+      "version": "v1"
+    }
+  ]
+}

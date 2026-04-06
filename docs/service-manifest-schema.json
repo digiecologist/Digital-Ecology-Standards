@@ -1,0 +1,170 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Service Manifest Schema",
+  "description": "Schema for service-manifest.json — describes your service's structure for the SCARS gate and pattern fitness functions",
+  "type": "object",
+  "required": ["services"],
+  "additionalProperties": false,
+  "properties": {
+    "_comment": {
+      "type": "string",
+      "description": "Optional comment field (ignored by validator)"
+    },
+    "_schema_version": {
+      "type": "string",
+      "description": "Schema version for future compatibility"
+    },
+    "_docs": {
+      "type": "string",
+      "description": "Optional reference to documentation"
+    },
+    "services": {
+      "type": "array",
+      "description": "List of services in this repository",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "domain",
+          "responsibilities",
+          "publicApiPaths",
+          "dependsOn",
+          "dependencyDomains",
+          "operationsPerDay",
+          "owner"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "_comment": {
+            "type": "string",
+            "description": "Optional comment (ignored by validator)"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-z0-9][a-z0-9\\-]*[a-z0-9]$|^[a-z0-9]$",
+            "description": "Service name (lowercase, hyphens allowed)"
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50,
+            "pattern": "^[a-z0-9][a-z0-9\\-]*[a-z0-9]$|^[a-z0-9]$",
+            "description": "Business domain (one per service — if multiple, use P05 Niche Partitioning)"
+          },
+          "responsibilities": {
+            "type": "array",
+            "description": "What this service is responsible for (SCARS Separation: should be ≤ 3)",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          },
+          "publicApiPaths": {
+            "type": "array",
+            "description": "HTTP paths exposed by this service (SCARS Abstraction: must not contain 'internal', 'db', 'impl', etc.)",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^/[a-zA-Z0-9:\\/_\\-]*$"
+            }
+          },
+          "dependsOn": {
+            "type": "array",
+            "description": "Services or APIs this service calls (SCARS Simplify: warn if > 5)",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          },
+          "dependencyDomains": {
+            "type": "array",
+            "description": "Business domains of your dependencies (SCARS Cohesion: should be ≤ 2)",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 50
+            }
+          },
+          "contractTests": {
+            "type": "array",
+            "description": "Services you have Pact/consumer contract tests for (used by P07)",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          },
+          "operationsPerDay": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Estimated operations per day (SCARS Responsibilities: no single service should exceed 40% of system total)"
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "description": "Team or person responsible for this service"
+          },
+          "lastReviewed": {
+            "type": "string",
+            "format": "date",
+            "description": "When this manifest was last reviewed (YYYY-MM-DD)"
+          }
+        }
+      }
+    },
+    "interfaces": {
+      "type": "array",
+      "description": "APIs your service exposes (optional, used by P07 Nutrient Flow Contracts)",
+      "items": {
+        "type": "object",
+        "required": ["name", "owner", "version", "hasContractTests"],
+        "additionalProperties": false,
+        "properties": {
+          "_comment": {
+            "type": "string",
+            "description": "Optional comment (ignored by validator)"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "description": "Logical name of the API"
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "description": "Team responsible for this API"
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20,
+            "description": "Current API version (v1, v2, beta, etc.)"
+          },
+          "hasContractTests": {
+            "type": "boolean",
+            "description": "Whether this API has Pact consumer-driven contract tests"
+          },
+          "deprecatedIn": {
+            "type": "string",
+            "description": "Version in which this API is scheduled for deprecation"
+          },
+          "sunsetDate": {
+            "type": "string",
+            "format": "date",
+            "description": "When this API will be removed (YYYY-MM-DD)"
+          }
+        }
+      }
+    }
+  }
+}
