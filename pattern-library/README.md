@@ -1,4 +1,4 @@
-# Pattern Library — All 20 Patterns
+# Pattern Library All 20 Patterns
 
 20 ecological engineering patterns for building adaptive digital ecosystems.
 
