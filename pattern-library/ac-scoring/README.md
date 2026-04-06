@@ -10,9 +10,9 @@ The Adaptive Capacity (AC) score is a 0–100 measure of how well your software 
 
 | Component | Weight | What it measures |
 |---|---|---|
-| Technical AC (T-AC) | 40% | Coupling score, observability coverage, deployment independence |
-| Organisational AC (O-AC) | 35% | Team cognitive load, flow efficiency, improvement capacity |
-| Operational AC (Op-AC) | 25% | Recovery speed, deployment frequency, incident patterns |
+| Technical AC (TAC) | 40% | Coupling score, observability coverage, deployment independence |
+| Organisational AC (OAC) | 35% | Team cognitive load, flow efficiency, improvement capacity |
+| Operational AC (OpAC) | 25% | Recovery speed, deployment frequency, incident patterns |
 
 **Above 70:** healthy, adaptable ecosystem.
 **40–70:** moderate stress — specific dimensions need attention.
