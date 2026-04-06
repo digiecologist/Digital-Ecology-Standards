@@ -1,8 +1,5 @@
 # Ecological Engineering Standards
 
-20 patterns for building adaptive digital ecosystems.
-Based on *Digital Ecosystems, Naturally Resilient* by Jenny Wilson.
-
 ---
 
 ## What this is
