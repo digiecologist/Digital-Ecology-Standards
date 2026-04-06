@@ -67,4 +67,5 @@ Run the [SCARS diagnostic](scars-diagnostic/) first if you are starting from a p
 
 - [AC Scoring guide](ac-scoring/) — the single score that summarises overall health
 - [SCARS Diagnostic](scars-diagnostic/) — the structural health check that runs before deployment
+- [Antipattern Library](antipatterns/) — unhealthy failure modes and the patterns that fix them
 - Individual pattern fitness functions in each pattern's `fitness-functions/` folder

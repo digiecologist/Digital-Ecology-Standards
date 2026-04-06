@@ -54,7 +54,7 @@ The core problem is synchronous coupling. When services call each other directly
 
 ## 6. Antipatterns
 
-See [antipatterns.md](antipatterns.md). The most common: converting sync calls to events but keeping the consumer synchronously waiting for the response event. Sync coupling in async clothing.
+See [AP-01: Mycelial Mesh antipatterns](../../antipatterns/ap-01-mycelial-mesh.md). The most common: converting sync calls to events but keeping the consumer synchronously waiting for the response event. Sync coupling in async clothing.
 
 > **Sign:** end-to-end latency does not improve after introducing the mesh.
 
