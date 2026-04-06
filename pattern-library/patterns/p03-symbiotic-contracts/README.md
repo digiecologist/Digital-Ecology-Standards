@@ -1,4 +1,4 @@
-# P03 — Succession Stage Routing
+# P03 Succession Stage Routing
 
 **Category:** Structural / Architectural | **Build priority:** BUILD SECOND | **Complexity:** Medium
 **AC score contribution:** Technical AC (T-AC)
@@ -11,9 +11,9 @@
 
 In ecology, succession describes how ecosystems change over time — bare rock becomes pioneer grassland, grassland becomes shrub, shrub becomes forest. Each stage has different species, different rules, different tolerances. What works for a pioneer stage would destroy a climax forest.
 
-Software services go through the same stages. A new service in Genesis — barely proven, changing weekly — needs different governance than a stable Product-stage service that thirty teams depend on. Applying the same deployment rules and schema governance to both is a mistake most systems make by default.
+Software services go through the same stages. A new service in Genesis, barely proven, changing weekly, needs different governance than a stable Product-stage service that thirty teams depend on. Applying the same deployment rules and schema governance to both is a mistake most systems make by default.
 
-Succession Stage Routing classifies each service on the Wardley evolution axis and routes governance decisions — schema validation strictness, deployment gate requirements, SLA obligations — through that classification.
+Succession Stage Routing classifies each service on the Wardley evolution axis and routes governance decisions, schema validation strictness, deployment gate requirements, SLA obligations, through that classification.
 
 ---
 
@@ -31,7 +31,7 @@ Succession Stage Routing classifies each service on the Wardley evolution axis a
 
 You know you need this pattern when a producer team changes their event schema and three consuming teams find out in error logs an hour later, or when nobody can answer "what breaks if we change this API?"
 
-The problem is uniform governance. Most systems apply the same rules to everything — same PR requirements, same schema validation, same deployment gates. This is either too strict for experimental work or too loose for critical infrastructure. Often both at once in different parts of the system.
+The problem is uniform governance. Most systems apply the same rules to everything, same PR requirements, same schema validation, same deployment gates. This is either too strict for experimental work or too loose for critical infrastructure. Often both at once in different parts of the system.
 
 ---
 
@@ -61,7 +61,7 @@ The problem is uniform governance. Most systems apply the same rules to everythi
 
 4. **Add the schema drift fitness function.** On every deploy, validate schema changes against the stage's rules.
 
-5. **Review stage classifications quarterly.** Services evolve — stale classifications are as harmful as none.
+5. **Review stage classifications quarterly.** Services evolve, stale classifications are as harmful as none.
 
 ---
 
