@@ -43,6 +43,8 @@ The problem is improvement work that is perpetually deferred. In most teams, imp
 
 ## 6. Antipatterns
 
+See [AP-14: Regenerative Refactoring antipatterns](../../antipatterns/ap-14-regenerative-refactoring.md).
+
 **The tech debt sprint:** a dedicated sprint to pay down debt, after which normal delivery resumes and debt immediately starts accumulating again.
 
 > **Sign:** your team has run four "tech debt sprints" in two years and the codebase is no simpler.
