@@ -25,6 +25,19 @@ The ecological framing is not decorative. It explains *why* each pattern works, 
 | Measure my system's architectural health | [pattern-library/ac-scoring/](pattern-library/ac-scoring/) |
 | Migrate from a tangled, hard-to-change system | [migration-paths/](migration-paths/) |
 | See how this connects to other frameworks | [docs/framework-connections.md](docs/framework-connections.md) |
+| Set up the fitness function pipeline | [docs/service-manifest-quickstart.md](docs/service-manifest-quickstart.md) |
+
+---
+
+## Getting started with the fitness function pipeline
+
+The architecture health checks run automatically in your CI/CD pipeline. To enable them:
+
+1. **Register your service:** Copy [service-manifest.json](service-manifest.json) and fill it with your service details (5 minutes)
+2. **Validate:** Run `node docs/validate-manifest.js` to check for structural violations
+3. **Deploy:** The SCARS gate runs before deployment, catching violations early
+
+→ [Quick start guide](docs/service-manifest-quickstart.md)
 
 ---
 
