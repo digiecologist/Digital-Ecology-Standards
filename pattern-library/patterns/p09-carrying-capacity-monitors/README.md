@@ -55,6 +55,8 @@ The problem is reactive observability. Most systems are instrumented to detect f
 
 ## 6. Antipatterns
 
+See [AP-09: Carrying Capacity Monitors antipatterns](../../antipatterns/ap-09-carrying-capacity-monitors.md).
+
 **Alert soup:** too many alerts → engineers ignore them → real alerts missed. Any alert firing more than twice a week without action is broken.
 
 > **Sign:** on-call engineers silence alert channels at the start of their shift.
