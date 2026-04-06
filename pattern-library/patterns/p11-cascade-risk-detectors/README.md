@@ -1,4 +1,4 @@
-# P11 — Cascade Risk Detectors
+# P11 Cascade Risk Detectors
 
 **Category:** Warning Signs & Triggers | **Build priority:** BUILD FIRST | **Complexity:** High
 **AC score contribution:** Technical AC (T-AC) + Operational AC (Op-AC)
@@ -44,7 +44,7 @@ The problem is invisible blast radius. When failure paths are unmapped, every in
 
 ## 5. What needs to happen
 
-1. Build your dependency graph from trace data (Jaeger, Zipkin, Tempo) — automate this, a manual map is always out of date
+1. Build your dependency graph from trace data (Jaeger, Zipkin, Tempo) automate this, a manual map is always out of date
 2. Score cascade risk per service: fan-in, depth, sync bridge score
 3. Identify your top 5 cascade risk services
 4. Add circuit breakers with defined fallbacks on high-risk paths
