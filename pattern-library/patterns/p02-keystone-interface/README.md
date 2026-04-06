@@ -7,7 +7,7 @@
 
 ## 1. What this pattern is
 
-In an ecosystem, a keystone species is one whose removal causes the entire system to collapse — not because it is the largest, but because everything depends on it in ways that are not obvious until it is gone.
+In an ecosystem, a keystone species is one whose removal causes the entire system to collapse, not because it is the largest, but because everything depends on it in ways that are not obvious until it is gone.
 
 Every software system has keystone interfaces: integration points that multiple services depend on, where a change cascades outward and a failure spreads fast. This pattern is the practice of identifying these points explicitly, and protecting them with higher standards of stability, observability, and governance.
 
