@@ -1,4 +1,4 @@
-# P02 — Keystone Interface
+# P02 Keystone Interface
 
 **Category:** Structural / Architectural | **Build priority:** BUILD FIRST | **Complexity:** Low
 **AC score contribution:** Technical AC (T-AC)
@@ -17,8 +17,8 @@ Most systems do not know where their keystones are until one breaks.
 
 ## 2. The value it brings
 
-- Integration failures are contained — the interface is designed to absorb change
-- Consumer teams build with confidence — a declared, versioned keystone is a promise
+- Integration failures are contained, the interface is designed to absorb change
+- Consumer teams build with confidence, a declared, versioned keystone is a promise
 - Incidents are smaller — failure modes are known and recovery is faster
 - Architecture decisions improve — knowing your keystones changes how you think about risk
 
@@ -36,8 +36,8 @@ The problem is unmanaged dependency concentration. Some interfaces carry more we
 
 | Pattern | Relationship |
 |---|---|
-| Anti-Corruption Layer (DDD) | ACL protects consumers from upstream changes — Keystone Interface identifies which upstreams need it most |
-| Circuit Breaker | Runtime protection for keystone dependencies — this pattern is the design-time identification |
+| Anti-Corruption Layer (DDD) | ACL protects consumers from upstream changes, Keystone Interface identifies which upstreams need it most |
+| Circuit Breaker | Runtime protection for keystone dependencies, this pattern is the design-time identification |
 | Consumer-Driven Contract Testing | Testing practice that enforces Keystone Interface commitments in CI |
 
 **The gap:** existing patterns provide protection mechanisms but not a systematic method for identifying which interfaces need protecting first.
@@ -46,12 +46,12 @@ The problem is unmanaged dependency concentration. Some interfaces carry more we
 
 ## 5. What needs to happen
 
-1. Map your dependency graph — list every service-to-service dependency using trace data or service mesh
-2. Identify keystones — any service with > 3 upstream dependents is a candidate
-3. Declare them explicitly — create an `INTERFACES.md` in each keystone service listing consumers, schema version, SLA, owner, and rollback procedure
-4. Add enhanced observability — per-consumer metrics, not just aggregate
-5. Introduce consumer-driven contract tests — each consumer declares what they depend on; producer runs these on every deploy
-6. Apply the Responsibilities fitness function — flag when fan-in exceeds 8
+1. Map your dependency graph, list every service-to-service dependency using trace data or service mesh
+2. Identify keystones, any service with > 3 upstream dependents is a candidate
+3. Declare them explicitly, create an `INTERFACES.md` in each keystone service listing consumers, schema version, SLA, owner, and rollback procedure
+4. Add enhanced observability, per-consumer metrics, not just aggregate
+5. Introduce consumer-driven contract tests, each consumer declares what they depend on; producer runs these on every deploy
+6. Apply the Responsibilities fitness function, flag when fan-in exceeds 8
 
 ---
 
