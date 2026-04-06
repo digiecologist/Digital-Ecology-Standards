@@ -1,4 +1,4 @@
-# P14 — Regenerative Refactoring
+# P14 Regenerative Refactoring
 
 **Category:** Adaptive & Regenerative | **Build priority:** BUILD FIRST | **Complexity:** Low
 **AC score contribution:** Organisational AC (O-AC) + Technical AC (T-AC)
@@ -7,7 +7,7 @@
 
 ## 1. What this pattern is
 
-A healthy forest does not wait for a catastrophic fire to renew itself. Leaves fall continuously. Deadwood decomposes. Old growth makes way for new. Renewal is a constant, distributed process — not a periodic event.
+A healthy forest does not wait for a catastrophic fire to renew itself. Leaves fall continuously. Deadwood decomposes. Old growth makes way for new. Renewal is a constant, distributed process, not a periodic event.
 
 Software teams that wait for a big rewrite let deadwood accumulate until the fire is inevitable. Regenerative Refactoring is the practice of continuous, small acts of improvement embedded in normal delivery work. Not a separate workstream. Not a tech debt sprint. The practice of leaving every part of the codebase slightly better than you found it, every time you touch it.
 
