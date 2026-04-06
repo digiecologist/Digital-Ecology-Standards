@@ -1,0 +1,101 @@
+{
+  "services": [
+    {
+      "name": "order-service",
+      "domain": "checkout",
+      "responsibilities": [
+        "accept orders",
+        "validate carts",
+        "calculate totals"
+      ],
+      "publicApiPaths": [
+        "/orders",
+        "/orders/:id",
+        "/orders/:id/status"
+      ],
+      "dependsOn": [
+        "payment-service",
+        "inventory-service",
+        "user-service"
+      ],
+      "dependencyDomains": [
+        "payments",
+        "inventory"
+      ],
+      "operationsPerDay": 50000,
+      "owner": "checkout-team",
+      "lastReviewed": "2026-04-06"
+    },
+    {
+      "name": "notification-service",
+      "domain": "comms",
+      "responsibilities": [
+        "send email",
+        "send SMS"
+      ],
+      "publicApiPaths": [
+        "/notifications",
+        "/notifications/preferences",
+        "/notifications/templates"
+      ],
+      "dependsOn": [
+        "user-service",
+        "template-service"
+      ],
+      "dependencyDomains": [
+        "users"
+      ],
+      "operationsPerDay": 30000,
+      "owner": "comms-team",
+      "lastReviewed": "2026-04-06"
+    },
+    {
+      "name": "user-service",
+      "domain": "identity",
+      "responsibilities": [
+        "manage user profiles",
+        "handle authentication"
+      ],
+      "publicApiPaths": [
+        "/users",
+        "/users/:id",
+        "/auth/verify",
+        "/auth/token"
+      ],
+      "dependsOn": [
+        "user-database",
+        "cache-service"
+      ],
+      "dependencyDomains": [
+        "storage"
+      ],
+      "operationsPerDay": 100000,
+      "owner": "platform-team",
+      "lastReviewed": "2026-04-06"
+    },
+    {
+      "name": "inventory-service",
+      "domain": "stock",
+      "responsibilities": [
+        "track stock levels",
+        "reserve inventory"
+      ],
+      "publicApiPaths": [
+        "/inventory/:productId",
+        "/inventory/:productId/reserve",
+        "/inventory/:productId/available"
+      ],
+      "dependsOn": [
+        "inventory-database",
+        "notification-service"
+      ],
+      "dependencyDomains": [
+        "storage",
+        "comms"
+      ],
+      "operationsPerDay": 80000,
+      "owner": "stock-team",
+      "lastReviewed": "2026-04-05"
+    }
+  ]
+}
