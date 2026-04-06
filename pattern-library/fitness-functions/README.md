@@ -97,6 +97,10 @@ See `docs/service-manifest-schema.json` for the full schema and validation rules
 
 Each service team is responsible for their own entry in the manifest. The gate reads these entries at deploy time and checks them against the SCARS rules.
 
+### Example
+
+See [../service-manifest-example.json](../service-manifest-example.json) for a complete example showing four services that pass all SCARS checks.
+
 ---
 
 ## Understanding violations
