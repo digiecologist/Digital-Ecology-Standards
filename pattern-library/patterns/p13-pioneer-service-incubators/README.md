@@ -44,6 +44,8 @@ The problem is no protected space for change. Without a deliberate incubation sp
 
 ## 6. Antipatterns
 
+See [AP-13: Pioneer Service Incubator antipatterns](../../antipatterns/ap-13-pioneer-service-incubators.md).
+
 **The unfunded mandate:** the incubation space exists on paper but capacity is reallocated every sprint.
 
 > **Sign:** the last thing incubated was 18 months ago, done informally by an engineer working evenings.
