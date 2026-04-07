@@ -1,4 +1,4 @@
-# ac-score-calculator.md
+# adaptive capacity score calculator.md
 
 > **Step-by-step guide to calculating your Adaptive Capacity (AC) score.**
 > Time required: 2–3 hours for a first reading. 30–60 minutes for quarterly updates.
@@ -13,9 +13,9 @@ It has three dimensions:
 
 | Dimension | What it asks | Weight in final score |
 |---|---|---|
-| **T-AC** — Technology Adaptability | Can your architecture actually change? | 40% |
-| **O-AC** — Organisational Adaptability | Can your teams respond when it needs to? | 35% |
-| **Op-AC** — Operational Adaptability | Can you ship changes reliably? | 25% |
+| **TAC** — Technology Adaptability | Can your architecture actually change? | 40% |
+| **OAC** — Organisational Adaptability | Can your teams respond when it needs to? | 35% |
+| **OpAC** — Operational Adaptability | Can you ship changes reliably? | 25% |
 
 Each dimension is made up of four sub-scores. You score each sub-score, combine them into a dimension score, then combine the three dimension scores into your final AC.
 
@@ -27,37 +27,37 @@ Each dimension is made up of four sub-scores. You score each sub-score, combine 
 AC = ∛(T-AC × O-AC × Op-AC)
 ```
 
-This is a **geometric mean**, not an average. That means a very low score in any one dimension drags the whole number down — even if the others are high. This is intentional. It reflects Liebig's Law from ecology: growth is determined by the scarcest resource, not the most abundant.
+This is a **geometric mean**, not an average. That means a very low score in any one dimension drags the whole number down even if the others are high. This is intentional. It reflects Liebig's Law from ecology: growth is determined by the scarcest resource, not the most abundant.
 
-> A T-AC of 85, O-AC of 80, and Op-AC of 25 gives an AC of **54** — not 63.
+> A TAC of 85, OAC of 80, and OpAC of 25 gives an AC of **54** — not 63.
 > The weakest link sets the ceiling.
 
 ---
 
 ## Interpreting your score
 
-| Score | Ecosystem type | What it means |
-|---|---|---|
-| **80–100** | Coral Reef | Change is your operating mode. Strong in all three dimensions. |
-| **60–79** | Mixed Forest | Good foundation. You can evolve with deliberate effort. |
-| **40–59** | Managed Plantation | Moderate stress. Some dimensions are blocking you. |
-| **20–39** | Monoculture | Significant structural risk. One major shift could break things. |
-| **0–19** | Bare Soil | Critical. Start with the SCARS diagnostic before anything else. |
+| Score  | What it means |
+|---|---|
+| **80–100** | Change is your operating mode. Strong in all three dimensions. |
+| **60–79** | Good foundation. You can evolve with deliberate effort. |
+| **40–59** | Moderate stress. Some dimensions are blocking you. |
+| **20–39** | Significant structural risk. One major shift could break things. |
+| **0–19** | Critical. Start with the SCARS diagnostic before anything else. |
 
 ---
 
-## Step 1 — Score T-AC (Technology Adaptability)
+## Step 1 — Score TAC (Technology Adaptability)
 
 **Formula:**
 ```
-T-AC = (Diversity × 0.25) + (Automation × 0.25) + (Observability × 0.30) + (Coupling × 0.20)
+TAC = (Diversity × 0.25) + (Automation × 0.25) + (Observability × 0.30) + (Coupling × 0.20)
 ```
 
 *Why these weights? Observability gets the highest weight — you cannot improve what you cannot see. Diversity and Automation are equal. Coupling is weighted lower because it is partially captured in the others.*
 
 ---
 
-### T-AC Dimension 1: Diversity (options and resilience)
+### TAC Dimension 1: Diversity (options and resilience)
 
 Score each component 0–100, then apply the formula.
 
@@ -97,7 +97,7 @@ Diversity = (Capability Coverage × 0.40) + (Vendor Risk × 0.35) + (Pattern Div
 
 ---
 
-### T-AC Dimension 2: Automation (speed when conditions shift)
+### TAC Dimension 2: Automation (speed when conditions shift)
 
 **2.1 — CI/CD Coverage**
 What percentage of services have automated build, test, and deploy pipelines?
@@ -135,7 +135,7 @@ Automation = (CI/CD × 0.40) + (Test Automation × 0.35) + (Infrastructure as Co
 
 ---
 
-### T-AC Dimension 3: Observability (can you see what is happening?)
+### TAC Dimension 3: Observability (can you see what is happening?)
 
 **3.1 — Distributed Tracing**
 Can you follow a single request across multiple services end-to-end?
@@ -173,7 +173,7 @@ Observability = (Distributed Tracing × 0.35) + (Metrics & Alerting × 0.40) + (
 
 ---
 
-### T-AC Dimension 4: Coupling (can teams move independently?)
+### TAC Dimension 4: Coupling (can teams move independently?)
 
 **4.1 — Deployment Independence**
 Can a team deploy their service without coordinating with other teams?
@@ -211,10 +211,10 @@ Coupling = (Deployment Independence × 0.40) + (Data Coupling × 0.35) + (Sync D
 
 ---
 
-### T-AC calculation
+### TAC calculation
 
 ```
-T-AC = (Diversity × 0.25) + (Automation × 0.25) + (Observability × 0.30) + (Coupling × 0.20)
+TAC = (Diversity × 0.25) + (Automation × 0.25) + (Observability × 0.30) + (Coupling × 0.20)
 ```
 
 | | Score |
@@ -223,7 +223,7 @@ T-AC = (Diversity × 0.25) + (Automation × 0.25) + (Observability × 0.30) + (C
 | Automation | _____ |
 | Observability | _____ |
 | Coupling | _____ |
-| **T-AC total** | **_____** |
+| **TAC total** | **_____** |
 
 ---
 
@@ -231,12 +231,12 @@ T-AC = (Diversity × 0.25) + (Automation × 0.25) + (Observability × 0.30) + (C
 
 **Formula:**
 ```
-O-AC = (Team Autonomy × 0.30) + (Capability Distribution × 0.25) + (Flow Efficiency × 0.30) + (Experimentation Safety × 0.15)
+OAC = (Team Autonomy × 0.30) + (Capability Distribution × 0.25) + (Flow Efficiency × 0.30) + (Experimentation Safety × 0.15)
 ```
 
 ---
 
-### O-AC Dimension 1: Team Autonomy
+### OAC Dimension 1: Team Autonomy
 
 **1.1 — Decision-Making Speed**
 How long does it take a team to make and act on a routine architectural or product decision?
@@ -340,7 +340,7 @@ Flow Efficiency = (Lead Time × 0.40) + (Wait Time × 0.35) + (Batch Size × 0.2
 
 ---
 
-### O-AC Dimension 4: Experimentation Safety
+### OAC Dimension 4: Experimentation Safety
 
 **4.1 — Psychological Safety**
 Do people feel safe raising concerns, trying new approaches, and being honest about failures?
@@ -368,10 +368,10 @@ Experimentation Safety = (Psychological Safety × 0.60) + (Post-incident Learnin
 
 ---
 
-### O-AC calculation
+### OAC calculation
 
 ```
-O-AC = (Team Autonomy × 0.30) + (Capability Distribution × 0.25) + (Flow Efficiency × 0.30) + (Experimentation Safety × 0.15)
+OAC = (Team Autonomy × 0.30) + (Capability Distribution × 0.25) + (Flow Efficiency × 0.30) + (Experimentation Safety × 0.15)
 ```
 
 | | Score |
@@ -384,18 +384,18 @@ O-AC = (Team Autonomy × 0.30) + (Capability Distribution × 0.25) + (Flow Effic
 
 ---
 
-## Step 3 — Score Op-AC (Operational Adaptability)
+## Step 3 — Score OpAC (Operational Adaptability)
 
 **Formula:**
 ```
-Op-AC = (Change Resilience × 0.35) + (Response Capability × 0.30) + (Evolution Options × 0.20) + (Regenerative Capacity × 0.15)
+OpAC = (Change Resilience × 0.35) + (Response Capability × 0.30) + (Evolution Options × 0.20) + (Regenerative Capacity × 0.15)
 ```
 
 *Why these weights? Change Resilience is highest — if changes fail, nothing else matters. Response Capability is next — speed determines whether you adapt in time. Evolution Options enable experimentation. Regenerative Capacity is foundational but its effects are indirect.*
 
 ---
 
-### Op-AC Dimension 1: Change Resilience
+### OpAC Dimension 1: Change Resilience
 
 **1.1 — Deployment Success Rate**
 What percentage of deployments complete without causing an incident or requiring rollback?
@@ -433,7 +433,7 @@ Change Resilience = (Deployment Success × 0.35) + (Change Failure Rate × 0.35)
 
 ---
 
-### Op-AC Dimension 2: Response Capability
+### OpAC Dimension 2: Response Capability
 
 **2.1 — Deployment Frequency (DORA)**
 How often do you deploy to production?
@@ -471,7 +471,7 @@ Response Capability = (Deployment Frequency × 0.40) + (Time to Detect × 0.35) 
 
 ---
 
-### Op-AC Dimension 3: Evolution Options
+### OpAC Dimension 3: Evolution Options
 
 **3.1 — Feature Flag Coverage**
 Can you turn features on and off in production without a deployment?
@@ -519,7 +519,7 @@ Evolution Options = (Feature Flags × 0.30) + (Rollback Speed × 0.35) + (Data R
 
 ---
 
-### Op-AC Dimension 4: Regenerative Capacity
+### OpAC Dimension 4: Regenerative Capacity
 
 *An ecosystem running at 100% capacity has no energy for recovery or growth. This dimension measures your slack.*
 
@@ -569,10 +569,10 @@ Regenerative Capacity = (Team Utilisation × 0.35) + (Infrastructure Headroom ×
 
 ---
 
-### Op-AC calculation
+### OpAC calculation
 
 ```
-Op-AC = (Change Resilience × 0.35) + (Response Capability × 0.30) + (Evolution Options × 0.20) + (Regenerative Capacity × 0.15)
+OpAC = (Change Resilience × 0.35) + (Response Capability × 0.30) + (Evolution Options × 0.20) + (Regenerative Capacity × 0.15)
 ```
 
 | | Score |
@@ -593,12 +593,12 @@ AC = ∛(T-AC × O-AC × Op-AC)
 
 | | Score |
 |---|---|
-| T-AC | _____ |
-| O-AC | _____ |
-| Op-AC | _____ |
+| TAC | _____ |
+| OAC | _____ |
+| OpAC | _____ |
 | **AC (cube root of T-AC × O-AC × Op-AC)** | **_____** |
 
-Most calculators: `(T-AC * O-AC * Op-AC) ^ (1/3)`
+Most calculators: `(TAC * OAC * OpAC) ^ (1/3)`
 
 ---
 
@@ -610,9 +610,9 @@ Liebig's Law: improving your strongest dimension has diminishing returns. Fixing
 
 | Limiting Resource | What to do first |
 |---|---|
-| **T-AC is lowest** | Start with Coupling and Observability. See P01 (Mycelial Mesh) and P02 (Keystone Interface Pattern). |
-| **O-AC is lowest** | Start with Team Autonomy and Flow Efficiency. See the SCARS diagnostic and P03 (Succession Stage Routing). |
-| **Op-AC is lowest** | Start with Change Resilience and Regenerative Capacity. See P09 (Carrying Capacity Monitors) and P11 (Cascade Risk Detectors). |
+| **TAC is lowest** | Start with Coupling and Observability. See P01 (Mycelial Mesh) and P02 (Keystone Interface Pattern). |
+| **OAC is lowest** | Start with Team Autonomy and Flow Efficiency. See the SCARS diagnostic and P03 (Succession Stage Routing). |
+| **OpAC is lowest** | Start with Change Resilience and Regenerative Capacity. See P09 (Carrying Capacity Monitors) and P11 (Cascade Risk Detectors). |
 
 ---
 
@@ -623,7 +623,7 @@ A single score tells you where you are. A trend tells you which direction you ar
 Take a reading at least quarterly. Record:
 
 - Date
-- T-AC, O-AC, Op-AC, and AC
+- TAC, OAC, OpAC, and AC
 - The limiting resource
 - What you changed since the last reading
 - Whether the trend is rising, stable, or falling
@@ -636,15 +636,15 @@ A rising AC score means the ecosystem is getting healthier. A flat score despite
 
 | AC dimension | Maps to |
 |---|---|
-| T-AC Coupling | DORA "loosely coupled architecture"; Team Topologies stream-aligned teams |
-| T-AC Diversity | Wardley Mapping — Genesis → Commodity evolution; avoiding monoculture |
-| T-AC Observability | SRE SLOs and error budgets; DORA MTTR |
-| O-AC Flow Efficiency | DORA lead time for changes; Architecture for Flow (Susanne Kaiser) |
-| O-AC Team Autonomy | Team Topologies cognitive load; Inverse Conway Manoeuvre |
-| O-AC Capability Distribution | SCARS — Responsibilities and Separation (Ruth Malan) |
-| Op-AC Change Resilience | DORA change failure rate; deployment frequency |
-| Op-AC Response Capability | DORA MTTR; SRE error budgets |
-| Op-AC Evolution Options | Evolutionary Architecture fitness functions (Ford, Parsons, Kua) |
+| TAC Coupling | DORA "loosely coupled architecture"; Team Topologies stream-aligned teams |
+| TAC Diversity | Wardley Mapping — Genesis → Commodity evolution; avoiding monoculture |
+| TAC Observability | SRE SLOs and error budgets; DORA MTTR |
+| OAC Flow Efficiency | DORA lead time for changes; Architecture for Flow (Susanne Kaiser) |
+| OAC Team Autonomy | Team Topologies cognitive load; Inverse Conway Manoeuvre |
+| OAC Capability Distribution | SCARS — Responsibilities and Separation (Ruth Malan) |
+| OpAC Change Resilience | DORA change failure rate; deployment frequency |
+| OpAC Response Capability | DORA MTTR; SRE error budgets |
+| OpAC Evolution Options | Evolutionary Architecture fitness functions (Ford, Parsons, Kua) |
 
 ---
 
